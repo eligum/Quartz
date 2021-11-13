@@ -1,20 +1,20 @@
 project "Quartz"
-    kind "StaticLib"
-    language "C++"
-    cppdialect "C++17"
-    staticruntime "off"
+	kind "StaticLib"
+	language "C++"
+	cppdialect "C++17"
+	staticruntime "off"
 
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
 
-    files
-    {
-        "src/**.hh",
-        "src/**.cc"
-    }
+	files
+	{
+		"src/**.hh",
+		"src/**.cc"
+	}
 
-    filter "system:linux"
-        systemversion "latest"
+	filter "system:linux"
+		systemversion "latest"
 
 	filter "configurations:Debug"
 		defines "QZ_DEBUG"
