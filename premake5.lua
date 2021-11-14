@@ -1,5 +1,6 @@
 workspace "Quartz"
 	architecture "x64"
+	location "build"
 	-- startproject "Hazelnut"
 
 	configurations
@@ -24,6 +25,6 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- 	include "Hazel/vendor/yaml-cpp"
 -- group ""
 
-include "Quartz-Core"
+include "Quartz"
 -- include "Sandbox"
 -- include "Hazelnut"

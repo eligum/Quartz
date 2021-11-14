@@ -1,16 +1,23 @@
-project "Quartz"
+project "Quartz-Core"
+	location "../build"
 	kind "StaticLib"
 	language "C++"
 	cppdialect "C++17"
-	staticruntime "off"
+	staticruntime "on"
 
-	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
+	targetdir ("%{wks.location}/build/bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("%{wks.location}/build/bin-int/" .. outputdir .. "/%{prj.name}")
 
 	files
 	{
+		"main.cpp",
 		"src/**.hh",
 		"src/**.cc"
+	}
+
+	include
+	{
+		"vendor/spdlog/include"
 	}
 
 	filter "system:linux"

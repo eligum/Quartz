@@ -6,7 +6,7 @@ You can find the tutorial [here](https://vulkan-tutorial.com/Development_environ
 
 ## Getting Started
 
-This project is built using `premake`, version 5.0 or higher is required.
+This project is built using [premake](https://premake.github.io/), version **5.0** or higher is required.
 
 <ins>**1. Downloading the repository:**</ins>
 
