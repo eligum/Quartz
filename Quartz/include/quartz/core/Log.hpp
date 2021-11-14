@@ -13,7 +13,7 @@ namespace quartz {
     class Log
     {
     public:
-        static void Init();
+        static void init();
 
         static Ref<spdlog::logger>& getCoreLogger() { return s_coreLogger; }
         static Ref<spdlog::logger>& getClientLogger() { return s_clientLogger; }

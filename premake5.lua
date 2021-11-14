@@ -1,3 +1,5 @@
+include "Dependencies.lua"
+
 workspace "Quartz"
 	architecture "x64"
 	location "build"
@@ -17,13 +19,13 @@ workspace "Quartz"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
--- group "Dependencies"
--- 	include "vendor/premake"
--- 	include "Hazel/vendor/GLFW"
--- 	include "Hazel/vendor/Glad"
--- 	include "Hazel/vendor/imgui"
--- 	include "Hazel/vendor/yaml-cpp"
--- group ""
+group "Dependencies"
+	include "vendor/premake"
+	include "Quartz/vendor/GLFW"
+	include "Quartz/vendor/Glad"
+	include "Quartz/vendor/imgui"
+	include "Quartz/vendor/yaml-cpp"
+group ""
 
 include "Quartz"
 -- include "Sandbox"

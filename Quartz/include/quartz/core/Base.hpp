@@ -4,17 +4,17 @@
 #include "quartz/core/PlatformDetection.hpp"
 
 #ifdef QZ_DEBUG
-	#if defined(QZ_PLATFORM_WINDOWS)
-		#define QZ_DEBUGBREAK() __debugbreak()
-	#elif defined(QZ_PLATFORM_LINUX)
-		#include <signal.h>
-		#define QZ_DEBUGBREAK() raise(SIGTRAP)
-	#else
-		#error "Platform doesn't support debugbreak yet!"
-	#endif
-	#define QZ_ENABLE_ASSERTS
+    #if defined(QZ_PLATFORM_WINDOWS)
+        #define QZ_DEBUGBREAK() __debugbreak()
+    #elif defined(QZ_PLATFORM_LINUX)
+        #include <signal.h>
+        #define QZ_DEBUGBREAK() raise(SIGTRAP)
+    #else
+        #error "Platform doesn't support debugbreak yet!"
+    #endif
+    #define QZ_ENABLE_ASSERTS
 #else
-	#define QZ_DEBUGBREAK()
+    #define QZ_DEBUGBREAK()
 #endif
 
 #define QZ_EXPAND_MACRO(x) x
@@ -26,23 +26,23 @@
 
 namespace quartz {
 
-	template<typename T>
-	using Scope = std::unique_ptr<T>;
-	template<typename T, typename ... Args>
-	constexpr Scope<T> CreateScope(Args&& ... args)
-	{
-		return std::make_unique<T>(std::forward<Args>(args)...);
-	}
+    template <typename T>
+    using Scope = std::unique_ptr<T>;
+    template <typename T, typename... Args>
+    constexpr Scope<T> CreateScope(Args&&... args)
+    {
+        return std::make_unique<T>(std::forward<Args>(args)...);
+    }
 
-	template<typename T>
-	using Ref = std::shared_ptr<T>;
-	template<typename T, typename ... Args>
-	constexpr Ref<T> CreateRef(Args&& ... args)
-	{
-		return std::make_shared<T>(std::forward<Args>(args)...);
-	}
+    template <typename T>
+    using Ref = std::shared_ptr<T>;
+    template <typename T, typename... Args>
+    constexpr Ref<T> CreateRef(Args&&... args)
+    {
+        return std::make_shared<T>(std::forward<Args>(args)...);
+    }
 
-}
+} // namespace quartz
 
 #include "quartz/core/Log.hpp"
 #include "quartz/core/Assert.hpp"

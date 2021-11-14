@@ -11,13 +11,14 @@ project "Quartz-Core"
 	files
 	{
 		"main.cpp",
-		"src/**.hh",
-		"src/**.cc"
+		"include/**.hpp",
+		"src/**.cpp"
 	}
 
 	include
 	{
 		"vendor/spdlog/include"
+		"vendor/glm/include"
 	}
 
 	filter "system:linux"
