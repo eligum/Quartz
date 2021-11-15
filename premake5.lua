@@ -1,9 +1,9 @@
-include "Dependencies.lua"
+-- include "Dependencies.lua"
 
 workspace "Quartz"
-	architecture "x64"
+	architecture "x86_64"
 	location "build"
-	-- startproject "Hazelnut"
+	-- startproject "Quartz-Editor"
 
 	configurations
 	{
@@ -19,14 +19,14 @@ workspace "Quartz"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
-group "Dependencies"
-	include "vendor/premake"
-	include "Quartz/vendor/GLFW"
-	include "Quartz/vendor/Glad"
-	include "Quartz/vendor/imgui"
-	include "Quartz/vendor/yaml-cpp"
-group ""
+-- group "Dependencies"
+-- 	include "vendor/premake"
+-- 	include "Quartz/vendor/GLFW"
+-- 	include "Quartz/vendor/Glad"
+-- 	include "Quartz/vendor/imgui"
+-- 	include "Quartz/vendor/yaml-cpp"
+-- group ""
 
 include "Quartz"
--- include "Sandbox"
+include "Sandbox"
 -- include "Hazelnut"

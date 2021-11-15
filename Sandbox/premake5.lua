@@ -5,19 +5,20 @@ project "Sandbox"
 	cppdialect "C++17"
 	staticruntime "off"
 
-	targetdir ("%{wks.location}/build/bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("%{wks.location}/build/bin-int/" .. outputdir .. "/%{prj.name}")
+	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
 
 	files
 	{
-		"src/**.h",
+		"src/**.hpp",
 		"src/**.cpp"
 	}
 
 	includedirs
 	{
+		"../Quartz/include",
+		"../Quartz/vendor/spdlog/include"
 		-- "%{wks.location}/Hazel/vendor/spdlog/include",
-		-- "%{wks.location}/Hazel/src",
 		-- "%{wks.location}/Hazel/vendor",
 		-- "%{IncludeDir.glm}",
 		-- "%{IncludeDir.entt}"
@@ -25,7 +26,7 @@ project "Sandbox"
 
 	links
 	{
-		"Quartz-Core"
+		"Quartz"
 	}
 
 	filter "system:linux"

@@ -1,23 +1,24 @@
-project "Quartz-Core"
+project "Quartz"
 	location "../build"
 	kind "StaticLib"
 	language "C++"
 	cppdialect "C++17"
-	staticruntime "on"
+	staticruntime "off"
+	-- pic "On"
 
-	targetdir ("%{wks.location}/build/bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("%{wks.location}/build/bin-int/" .. outputdir .. "/%{prj.name}")
+	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
 
 	files
 	{
-		"main.cpp",
 		"include/**.hpp",
 		"src/**.cpp"
 	}
 
-	include
+	includedirs
 	{
-		"vendor/spdlog/include"
+		"include",
+		"vendor/spdlog/include",
 		"vendor/glm/include"
 	}
 

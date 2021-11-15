@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if [ ! -d Quartz-Core ]; then
+if [ ! -d Quartz ]; then
     cd ..
-    if [ ! -d Quartz-Core ]; then
+    if [ ! -d Quartz ]; then
         echo "Execute this script from the project-root or the scripts directory."
         exit 1
     fi

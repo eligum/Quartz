@@ -26,15 +26,15 @@ namespace quartz {
 } // namespace quartz
 
 // Core log macros
-#define HZ_CORE_TRACE(...)    ::quartz::Log::getCoreLogger()->trace(__VA_ARGS__)
-#define HZ_CORE_INFO(...)     ::quartz::Log::getCoreLogger()->info(__VA_ARGS__)
-#define HZ_CORE_WARN(...)     ::quartz::Log::getCoreLogger()->warn(__VA_ARGS__)
-#define HZ_CORE_ERROR(...)    ::quartz::Log::getCoreLogger()->error(__VA_ARGS__)
-#define HZ_CORE_CRITICAL(...) ::quartz::Log::getCoreLogger()->critical(__VA_ARGS__)
+#define QZ_CORE_TRACE(...)    ::quartz::Log::getCoreLogger()->trace(__VA_ARGS__)
+#define QZ_CORE_INFO(...)     ::quartz::Log::getCoreLogger()->info(__VA_ARGS__)
+#define QZ_CORE_WARN(...)     ::quartz::Log::getCoreLogger()->warn(__VA_ARGS__)
+#define QZ_CORE_ERROR(...)    ::quartz::Log::getCoreLogger()->error(__VA_ARGS__)
+#define QZ_CORE_CRITICAL(...) ::quartz::Log::getCoreLogger()->critical(__VA_ARGS__)
 
 // Client log macros
-#define HZ_TRACE(...)         ::quartz::Log::getClientLogger()->trace(__VA_ARGS__)
-#define HZ_INFO(...)          ::quartz::Log::getClientLogger()->info(__VA_ARGS__)
-#define HZ_WARN(...)          ::quartz::Log::getClientLogger()->warn(__VA_ARGS__)
-#define HZ_ERROR(...)         ::quartz::Log::getClientLogger()->error(__VA_ARGS__)
-#define HZ_CRITICAL(...)      ::quartz::Log::getClientLogger()->critical(__VA_ARGS__)
+#define QZ_TRACE(...)         ::quartz::Log::getClientLogger()->trace(__VA_ARGS__)
+#define QZ_INFO(...)          ::quartz::Log::getClientLogger()->info(__VA_ARGS__)
+#define QZ_WARN(...)          ::quartz::Log::getClientLogger()->warn(__VA_ARGS__)
+#define QZ_ERROR(...)         ::quartz::Log::getClientLogger()->error(__VA_ARGS__)
+#define QZ_CRITICAL(...)      ::quartz::Log::getClientLogger()->critical(__VA_ARGS__)

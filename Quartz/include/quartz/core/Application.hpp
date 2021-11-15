@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 namespace quartz {
 
     class Application
@@ -8,7 +10,7 @@ namespace quartz {
         Application(const std::string& name = "Quartz App");
         virtual ~Application();
 
-        void run() {}
+        void run();
     };
 
     // To be defined in CLIENT
