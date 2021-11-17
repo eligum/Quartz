@@ -19,14 +19,13 @@ workspace "Quartz"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
--- group "Dependencies"
--- 	include "vendor/premake"
--- 	include "Quartz/vendor/GLFW"
+group "Dependencies"
+	include "Quartz/vendor/GLFW"
 -- 	include "Quartz/vendor/Glad"
 -- 	include "Quartz/vendor/imgui"
 -- 	include "Quartz/vendor/yaml-cpp"
--- group ""
+group ""
 
 include "Quartz"
 include "Sandbox"
--- include "Hazelnut"
+-- include "Quartz-Editor"

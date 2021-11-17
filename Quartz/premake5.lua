@@ -1,10 +1,9 @@
 project "Quartz"
-	location "../build"
 	kind "StaticLib"
 	language "C++"
 	cppdialect "C++17"
-	staticruntime "off"
-	-- pic "On"
+	staticruntime "Off"
+	location "../build"
 
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
@@ -19,16 +18,20 @@ project "Quartz"
 	{
 		"include",
 		"vendor/spdlog/include",
-		"vendor/glm/include"
+		"vendor/glm/include",
+		"vendor/GLFW/include"
 	}
 
 	filter "system:linux"
 		systemversion "latest"
 
+	filter "system:windows"
+		systemversion "latest"
+
 	filter "configurations:Debug"
 		defines "QZ_DEBUG"
 		runtime "Debug"
-		symbols "on"
+		symbols "On"
 
 		-- links
 		-- {
@@ -40,7 +43,7 @@ project "Quartz"
 	filter "configurations:Release"
 		defines "QZ_RELEASE"
 		runtime "Release"
-		optimize "on"
+		optimize "On"
 
 		-- links
 		-- {
@@ -52,7 +55,7 @@ project "Quartz"
 	filter "configurations:Dist"
 		defines "QZ_DIST"
 		runtime "Release"
-		optimize "on"
+		optimize "On"
 
 		-- links
 		-- {

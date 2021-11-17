@@ -8,4 +8,4 @@ if [ ! -d Quartz ]; then
     fi
 fi
 
-premake5 gmake || echo "'premake5' executable could not be found, make sure it is in your PATH." && exit 1
+premake5 --cc=clang gmake || echo "'premake5' executable could not be found, make sure it is in your PATH." && exit 1
