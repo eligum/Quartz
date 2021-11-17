@@ -13,28 +13,28 @@ namespace quartz {
     class Log
     {
     public:
-        static void init();
+        static void Init();
 
-        static Ref<spdlog::logger>& getCoreLogger() { return s_coreLogger; }
-        static Ref<spdlog::logger>& getClientLogger() { return s_clientLogger; }
+        static Ref<spdlog::logger>& GetCoreLogger() { return s_core_logger_; }
+        static Ref<spdlog::logger>& GetClientLogger() { return s_client_logger_; }
 
     private:
-        static Ref<spdlog::logger> s_coreLogger;
-        static Ref<spdlog::logger> s_clientLogger;
+        static Ref<spdlog::logger> s_core_logger_;
+        static Ref<spdlog::logger> s_client_logger_;
     };
 
 } // namespace quartz
 
 // Core log macros
-#define QZ_CORE_TRACE(...)    ::quartz::Log::getCoreLogger()->trace(__VA_ARGS__)
-#define QZ_CORE_INFO(...)     ::quartz::Log::getCoreLogger()->info(__VA_ARGS__)
-#define QZ_CORE_WARN(...)     ::quartz::Log::getCoreLogger()->warn(__VA_ARGS__)
-#define QZ_CORE_ERROR(...)    ::quartz::Log::getCoreLogger()->error(__VA_ARGS__)
-#define QZ_CORE_CRITICAL(...) ::quartz::Log::getCoreLogger()->critical(__VA_ARGS__)
+#define QZ_CORE_TRACE(...)    ::quartz::Log::GetCoreLogger()->trace(__VA_ARGS__)
+#define QZ_CORE_INFO(...)     ::quartz::Log::GetCoreLogger()->info(__VA_ARGS__)
+#define QZ_CORE_WARN(...)     ::quartz::Log::GetCoreLogger()->warn(__VA_ARGS__)
+#define QZ_CORE_ERROR(...)    ::quartz::Log::GetCoreLogger()->error(__VA_ARGS__)
+#define QZ_CORE_CRITICAL(...) ::quartz::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
 // Client log macros
-#define QZ_TRACE(...)         ::quartz::Log::getClientLogger()->trace(__VA_ARGS__)
-#define QZ_INFO(...)          ::quartz::Log::getClientLogger()->info(__VA_ARGS__)
-#define QZ_WARN(...)          ::quartz::Log::getClientLogger()->warn(__VA_ARGS__)
-#define QZ_ERROR(...)         ::quartz::Log::getClientLogger()->error(__VA_ARGS__)
-#define QZ_CRITICAL(...)      ::quartz::Log::getClientLogger()->critical(__VA_ARGS__)
+#define QZ_TRACE(...)         ::quartz::Log::GetClientLogger()->trace(__VA_ARGS__)
+#define QZ_INFO(...)          ::quartz::Log::GetClientLogger()->info(__VA_ARGS__)
+#define QZ_WARN(...)          ::quartz::Log::GetClientLogger()->warn(__VA_ARGS__)
+#define QZ_ERROR(...)         ::quartz::Log::GetClientLogger()->error(__VA_ARGS__)
+#define QZ_CRITICAL(...)      ::quartz::Log::GetClientLogger()->critical(__VA_ARGS__)

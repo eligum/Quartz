@@ -10,10 +10,10 @@ namespace quartz {
         Application(const std::string& name = "Quartz App");
         virtual ~Application();
 
-        void run();
+        void Run();
     };
 
     // To be defined in CLIENT
-    Application* createApplication();
+    Application* CreateApplication();
 
 } // namespace quartz

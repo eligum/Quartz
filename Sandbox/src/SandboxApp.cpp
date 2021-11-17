@@ -13,7 +13,7 @@ public:
     }
 };
 
-quartz::Application* quartz::createApplication()
+quartz::Application* quartz::CreateApplication()
 {
     return new Sandbox();
 }

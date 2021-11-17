@@ -13,7 +13,7 @@ namespace quartz {
     {
     }
 
-    void Application::run()
+    void Application::Run()
     {
         while (true) {}
     }

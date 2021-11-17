@@ -5,27 +5,27 @@
 
 namespace quartz {
 
-	Ref<spdlog::logger> Log::s_coreLogger;
-	Ref<spdlog::logger> Log::s_clientLogger;
+	Ref<spdlog::logger> Log::s_core_logger_;
+	Ref<spdlog::logger> Log::s_client_logger_;
 
-	void Log::init()
+	void Log::Init()
 	{
-		std::vector<spdlog::sink_ptr> logSinks;
-		logSinks.emplace_back(std::make_shared<spdlog::sinks::stdout_color_sink_mt>());
-		logSinks.emplace_back(std::make_shared<spdlog::sinks::basic_file_sink_mt>("Quartz.log", true));
+		std::vector<spdlog::sink_ptr> log_sinks;
+		log_sinks.emplace_back(std::make_shared<spdlog::sinks::stdout_color_sink_mt>());
+		log_sinks.emplace_back(std::make_shared<spdlog::sinks::basic_file_sink_mt>("Quartz.log", true));
 
-		logSinks[0]->set_pattern("[%T]%^ %n: %v%$");
-		logSinks[1]->set_pattern("[%T] [%l] %n: %v");
+		log_sinks[0]->set_pattern("[%T]%^ %n: %v%$");
+		log_sinks[1]->set_pattern("[%T] [%l] %n: %v");
 
-		s_coreLogger = std::make_shared<spdlog::logger>("QUARTZ", begin(logSinks), end(logSinks));
-		spdlog::register_logger(s_coreLogger);
-		s_coreLogger->set_level(spdlog::level::trace);
-		s_coreLogger->flush_on(spdlog::level::trace);
+		s_core_logger_ = std::make_shared<spdlog::logger>("QUARTZ", begin(log_sinks), end(log_sinks));
+		spdlog::register_logger(s_core_logger_);
+		s_core_logger_->set_level(spdlog::level::trace);
+		s_core_logger_->flush_on(spdlog::level::trace);
 
-		s_clientLogger = std::make_shared<spdlog::logger>("APP", begin(logSinks), end(logSinks));
-		spdlog::register_logger(s_clientLogger);
-		s_clientLogger->set_level(spdlog::level::trace);
-		s_clientLogger->flush_on(spdlog::level::trace);
+		s_client_logger_ = std::make_shared<spdlog::logger>("APP", begin(log_sinks), end(log_sinks));
+		spdlog::register_logger(s_client_logger_);
+		s_client_logger_->set_level(spdlog::level::trace);
+		s_client_logger_->flush_on(spdlog::level::trace);
 	}
 
 }
