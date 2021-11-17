@@ -1,6 +1,10 @@
 # Directories
-/.vscode
-/build
+/[Bb]uild
+
+# VSCode clutter
+/.vscode/*
+!.vscode/settings.json
+
 
 # Files
 *.o
