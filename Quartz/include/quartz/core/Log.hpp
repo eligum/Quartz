@@ -15,12 +15,12 @@ namespace quartz {
     public:
         static void Init();
 
-        static Ref<spdlog::logger>& GetCoreLogger() { return s_core_logger_; }
-        static Ref<spdlog::logger>& GetClientLogger() { return s_client_logger_; }
+        static Ref<spdlog::logger>& GetCoreLogger() { return s_core_logger; }
+        static Ref<spdlog::logger>& GetClientLogger() { return s_client_logger; }
 
     private:
-        static Ref<spdlog::logger> s_core_logger_;
-        static Ref<spdlog::logger> s_client_logger_;
+        static Ref<spdlog::logger> s_core_logger;
+        static Ref<spdlog::logger> s_client_logger;
     };
 
 } // namespace quartz

@@ -15,7 +15,7 @@ namespace quartz {
 
     void Application::Run()
     {
-        while (true) {}
+        while (true) { }
     }
 
 } // namespace quartz

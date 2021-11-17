@@ -143,4 +143,4 @@ namespace quartz {
 			Menu                = 348
 		};
 	}
-}
+} // namespace quartz

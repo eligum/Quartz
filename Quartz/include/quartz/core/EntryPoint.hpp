@@ -5,7 +5,7 @@
 
 extern quartz::Application* quartz::CreateApplication();
 
-int main(int argc, char** argv)
+int main(int /* argc */, char** /* argv */)
 {
     quartz::Log::Init();
     QZ_CORE_INFO("Logger initialized!");
