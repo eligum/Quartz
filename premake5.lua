@@ -1,5 +1,5 @@
-require(vendor/premake-export-compile-commands/export-compile-commands)
-require(vendor/premake-cmake/cmake)
+require("vendor/premake-export-cc/export-compile-commands")
+require("vendor/premake-cmake/cmake")
 
 workspace "Quartz"
 	architecture "x86_64"
