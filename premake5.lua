@@ -1,4 +1,5 @@
--- include "Dependencies.lua"
+require(vendor/premake-export-compile-commands/export-compile-commands)
+require(vendor/premake-cmake/cmake)
 
 workspace "Quartz"
 	architecture "x86_64"
@@ -19,7 +20,7 @@ workspace "Quartz"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
-group "Dependencies"
+group "dependencies"
 	include "Quartz/vendor/GLFW"
 -- 	include "Quartz/vendor/Glad"
 -- 	include "Quartz/vendor/imgui"

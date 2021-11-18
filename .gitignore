@@ -4,7 +4,8 @@
 # VSCode clutter
 /.vscode/*
 !.vscode/settings.json
-
+!.vscode/tasks.json
+!.vscode/launch.json
 
 # Files
 *.o

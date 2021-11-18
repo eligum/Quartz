@@ -7,3 +7,9 @@
 [submodule "Quartz/vendor/GLFW"]
 	path = Quartz/vendor/GLFW
 	url = git@github.com:eligum/glfw.git
+[submodule "vendor/premake-cmake"]
+	path = vendor/premake-cmake
+	url = git@github.com:Enhex/premake-cmake.git
+[submodule "vendor/premake-export-compile-commands"]
+	path = vendor/premake-export-cc
+	url = git@github.com:tarruda/premake-export-compile-commands.git
